@@ -6,19 +6,20 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 import Review from './components/Review/Review';
 import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
 import ProductDetail from './components/ProductDetail/ProductDetail';
-import withFirebaseAuth from 'react-with-firebase-auth'
-import * as firebase from 'firebase/app';
+// import withFirebaseAuth from 'react-with-firebase-auth'
+// import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import firebaseConfig from './firebaseConfig';
+// import firebaseConfig from './firebaseConfig';
 import { ProvideAuth } from "./components/Auth/use-auth";
-import Login from './components/Auth/Login';
+import Login from './components/Login/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Shipment from './components/Shipment/Shipment';
 
 //const firebaseApp = firebase.initializeApp(firebaseConfig);
 
@@ -53,6 +54,12 @@ function App(props) {
           </Route>
           <Route path="/inventory">
             <Inventory></Inventory>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/shipment">
+            <Shipment></Shipment>
           </Route>
           <Route exact path="/">
             <Shop></Shop>
